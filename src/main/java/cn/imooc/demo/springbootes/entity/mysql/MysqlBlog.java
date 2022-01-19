@@ -3,12 +3,12 @@ package cn.imooc.demo.springbootes.entity.mysql;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
+@Table(name = "t_blog")
+@Entity
 public class MysqlBlog {
 
     @Id
@@ -19,14 +19,10 @@ public class MysqlBlog {
 
     private String author;
 
+    @Column(columnDefinition = "mediumtext")
     private String content;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
-
-
-    public static void main(String[] args) {
-        MysqlBlog mb = new MysqlBlog();
-    }
+    private Date updateTime;
 }
